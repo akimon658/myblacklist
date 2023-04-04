@@ -8,6 +8,8 @@ on:
     paths:
       - myfilter.txt
 
+  workflow_dispatch:
+
 jobs:
   generate:
     runs-on: ubuntu-latest
