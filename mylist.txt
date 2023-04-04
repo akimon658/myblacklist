@@ -4,6 +4,7 @@ chip.de
 chrome-stats.com
 ckworks.jp
 desdelinux.net
+hotexamples.com
 libhunt.com
 nicozon.net
 nitter.domain.glass
