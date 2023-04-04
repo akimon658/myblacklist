@@ -6,7 +6,7 @@ on:
       - main
 
     paths:
-      - myfilter.txt
+      - mylist.txt
 
   workflow_dispatch:
 
