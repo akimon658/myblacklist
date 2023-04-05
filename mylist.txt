@@ -14,5 +14,6 @@ saasworthy.com
 sales-dx.jp
 twisoku.ldblog.jp
 twitter.com/ichiiyuinrkr
+vim.blue
 whotwi.com
 記事作成代行.jp
