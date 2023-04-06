@@ -24,7 +24,7 @@ jobs:
       - name: Generate
         run: |
           mkdir dist
-          go run main.go -template 'google.*##.g:has(a[href*="%s"]),google.*###Odp5De:has(a[href*="%s"])' -list mylist.txt -output dist/filter.txt
+          go run main.go -punycode -template 'google.*##.g:has(a[href*="%s"]),google.*###Odp5De:has(a[href*="%s"])' -list mylist.txt -output dist/filter.txt
 
       - name: Upload
         uses: actions/upload-pages-artifact@v1

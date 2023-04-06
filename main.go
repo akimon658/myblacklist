@@ -15,6 +15,7 @@ func main() {
 	templateFlag := flag.String("template", "", "Templates of filters. Put %s where a URL should be, use commas to specify multiple templates.")
 	listFlag := flag.String("list", "", "List of URLs you want to block.")
 	outputFlag := flag.String("output", "", "Location you want to save generated filter.")
+	punycode := flag.Bool("punycode", false, "Enable Punycode encoding")
 	flag.Parse()
 
 	if *templateFlag == "" {
@@ -44,13 +45,16 @@ func main() {
 	scanner := bufio.NewScanner(list)
 
 	for scanner.Scan() {
-		asciiUrl, err := idna.ToASCII(scanner.Text())
-		if err != nil {
-			log.Fatal(err)
+		s := scanner.Text()
+		if *punycode {
+			s, err = idna.ToASCII(s)
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 
 		for i := range templates {
-			bw.WriteString(fmt.Sprintf(templates[i], asciiUrl))
+			bw.WriteString(fmt.Sprintf(templates[i], s))
 			bw.WriteString("\n")
 		}
 	}
