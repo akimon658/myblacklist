@@ -28,13 +28,19 @@ func main() {
 	}
 	defer list.Close()
 
-	filter, err := os.Create(*outputFlag)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer filter.Close()
+	w := os.Stdout
 
-	w := bufio.NewWriter(filter)
+	if *outputFlag != "" {
+		filter, err := os.Create(*outputFlag)
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer filter.Close()
+
+		w = filter
+	}
+
+	bw := bufio.NewWriter(w)
 	scanner := bufio.NewScanner(list)
 
 	for scanner.Scan() {
@@ -44,8 +50,8 @@ func main() {
 		}
 
 		for i := range templates {
-			w.WriteString(fmt.Sprintf(templates[i], asciiUrl))
-			w.WriteString("\n")
+			bw.WriteString(fmt.Sprintf(templates[i], asciiUrl))
+			bw.WriteString("\n")
 		}
 	}
 
@@ -53,5 +59,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	w.Flush()
+	bw.Flush()
 }
