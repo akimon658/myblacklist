@@ -32,7 +32,7 @@ func main() {
 	w := os.Stdout
 
 	if *outputFlag != "" {
-		filter, err := os.Create(*outputFlag)
+		filter, err := os.OpenFile(*outputFlag, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 		if err != nil {
 			log.Fatal(err)
 		}
