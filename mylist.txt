@@ -33,6 +33,7 @@ twisoku.ldblog.jp
 twitter.com/bumpnokashi
 twitter.com/ichiiyuinrkr
 vim.blue
+web-dev-qa-db-ja.com
 web-engineer-wiki.com
 whotwi.com
 wikiwand.com
