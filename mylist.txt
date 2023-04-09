@@ -3,6 +3,7 @@ altapps.net
 androidapp.jp.net
 antenna.jp
 buhitter.com
+cherry-takuan.org/search
 chip.de
 chrome-stats.com
 ckworks.jp
