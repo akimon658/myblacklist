@@ -49,4 +49,5 @@ web-dev-qa-db-ja.com
 web-engineer-wiki.com
 whotwi.com
 wikiwand.com
+yahoo.co.jp/search
 記事作成代行.jp
