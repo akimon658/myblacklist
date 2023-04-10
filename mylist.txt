@@ -1,3 +1,4 @@
+/search
 5chmap.com
 agency-star.co.jp
 altapps.net
@@ -5,7 +6,6 @@ androidapp.jp.net
 antenam.info
 antenna.jp
 buhitter.com
-cherry-takuan.org/search
 chip.de
 chrome-stats.com
 ckworks.jp
