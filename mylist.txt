@@ -28,6 +28,7 @@ news.biglobe.ne.jp
 news.nicovideo.jp
 news.yahoo.co.jp
 newspicks.com
+newstwit.jp
 nicozon.net
 nitter.domain.glass
 no-windows.blog.jp
