@@ -1,3 +1,4 @@
 google.*##.AUiS2 a:has-text(%s)
 google.*##.k8XOCe:has-text(%s)
+google.*##.related-question-pair:has-text(%s)
 google.*##.tzVsfd:has-text(%s)
