@@ -6,22 +6,33 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strings"
 
 	"golang.org/x/net/idna"
 )
 
 func main() {
-	templateFlag := flag.String("template", "", "Templates of filters. Put %s where a URL should be, use commas to specify multiple templates.")
-	listFlag := flag.String("list", "", "List of URLs you want to block.")
-	outputFlag := flag.String("output", "", "Location you want to save generated filter.")
+	templateFlag := flag.String("template", "", "Path to template file used to generate a filter")
+	listFlag := flag.String("list", "", "List of URLs you want to block")
+	outputFlag := flag.String("output", "", "Location you want to save the generated filter")
 	punycode := flag.Bool("punycode", false, "Enable Punycode encoding")
 	flag.Parse()
 
-	if *templateFlag == "" {
-		log.Fatal("Please specify 1 or more templates with the -template flag.")
+	templateFile, err := os.Open(*templateFlag)
+	if err != nil {
+		log.Fatal(err)
 	}
-	templates := strings.Split(*templateFlag, ",")
+	defer templateFile.Close()
+
+	templScanner := bufio.NewScanner(templateFile)
+	templates := make([]string, 0, 10)
+
+	for templScanner.Scan() {
+		templates = append(templates, templScanner.Text())
+	}
+
+	if err := templScanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 
 	list, err := os.Open(*listFlag)
 	if err != nil {

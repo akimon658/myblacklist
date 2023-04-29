@@ -1,0 +1,4 @@
+google.*###Odp5De:has(a[href*="%s"])
+google.*##.PNCib:has(a[href*="%s"])
+google.*##.WlydOe[href*="%s"]
+google.*##.g:has(a[href*="%s"])
