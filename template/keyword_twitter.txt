@@ -1,1 +1,1 @@
-twitter.com##.css-1dbjc4n:has-text(%s)
+twitter.com##article:has-text(%s)
