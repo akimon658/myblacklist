@@ -6,7 +6,7 @@ on:
       - main
 
     paths:
-      - '*.txt'
+      - '**/*.txt'
 
   workflow_dispatch:
 
@@ -27,13 +27,13 @@ jobs:
       - name: Generate URL filter
         run: |
           mkdir dist
-          ./main -punycode -template url_template.txt -list mylist.txt -output dist/filter.txt
+          ./main -punycode -template template/url_google.txt -list list/url_google.txt -output dist/filter.txt
 
       - name: Generate keyword filter
-        run: ./main -template keyword_template.txt -list keywords.txt -output dist/filter.txt
+        run: ./main -template template/keyword_google.txt -list list/keywords_google.txt -output dist/filter.txt
 
       - name: Generate Twitter filter
-        run: ./main -template twitter_template.txt -list keywords_twitter.txt -output dist/filter.txt
+        run: ./main -template template/keyword_twitter.txt -list list/keywords_twitter.txt -output dist/filter.txt
 
       - name: Upload
         uses: actions/upload-pages-artifact@v1
