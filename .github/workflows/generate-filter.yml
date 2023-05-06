@@ -6,10 +6,7 @@ on:
       - main
 
     paths:
-      - keywords.txt
-      - mylist.txt
-      - keyword_template.txt
-      - url_template.txt
+      - '*.txt'
 
   workflow_dispatch:
 
@@ -34,6 +31,9 @@ jobs:
 
       - name: Generate keyword filter
         run: ./main -template keyword_template.txt -list keywords.txt -output dist/filter.txt
+
+      - name: Generate Twitter filter
+        run: ./main -template twitter_template.txt -list keywords_twitter.txt -output dist/filter.txt
 
       - name: Upload
         uses: actions/upload-pages-artifact@v1
