@@ -50,6 +50,7 @@ news.nicovideo.jp
 news.nifty.com
 news.yahoo.co.jp
 newspicks.com
+newstisiki.com
 newstwit.jp
 nicozon.net
 nitter.domain.glass
