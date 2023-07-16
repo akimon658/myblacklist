@@ -71,6 +71,7 @@ nitter.domain.glass
 no-windows.blog.jp
 omnismart.io
 otalab.net
+owacon.moe
 pokebrary.blog.jp
 pokeca-new-card.com
 progsoft.net
