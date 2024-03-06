@@ -44,6 +44,7 @@ jobs:
     needs: generate
 
     permissions:
+      actions: read
       pages: write
       id-token: write
 
