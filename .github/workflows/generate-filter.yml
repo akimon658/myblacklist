@@ -36,7 +36,7 @@ jobs:
         run: ./main -template template/keyword_twitter.txt -list list/keywords_twitter.txt -output dist/filter.txt
 
       - name: Upload
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
 
