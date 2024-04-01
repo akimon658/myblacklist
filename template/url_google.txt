@@ -4,5 +4,6 @@ google.*##.RzdJxc:has(a[href*="%s"])
 google.*##.WlydOe[href*="%s"]
 google.*##.Ww4FFb:has(a[href*="%s"])
 google.*##.XRVJtc:has(a[href*="%s"])
+google.*##.eA0Zlc:has(a[href*="%s"])
 google.*##.g:has(a[href*="%s"])
 google.*##.related-question-pair:has(a[href*="%s"])
